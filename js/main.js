@@ -48,7 +48,7 @@ function setMap(){
 	//create Albers equal area conic projection centered on USA
 
 	var projection = d3.geoAlbersUsa()
-		.scale(920)
+		.scale(880)
 		.translate([width / 2, height /2])
 
 	var path = d3.geoPath()
