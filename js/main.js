@@ -5,7 +5,7 @@
 var attrArray = ["Total Tasks", "Tasks - COLO", "Tasks - ROW",
 				"Tasks - NON-CAPITAL", "Tasks Assigned Over Month","Tasks Closed Out Over Month"]; //list of attributes from csv data file
 
-//Attribute to be siplayed on the bar chart(Fields from csv data file)
+//Attribute to be displayed on the bar chart(Fields from csv data file)
 var expressed = attrArray[0];
 //End Global variables
 
@@ -54,16 +54,6 @@ function setMap(){
 	var path = d3.geoPath()
         .projection(projection);
 
-/* 	 var projection = d3.geoAlbers()
-        .center([-1, 24.6])
-        .rotate([96.53, -15.56, 0])
-        .parallels([18.5, 33.18])
-        .scale(780) */
-      /*   .translate([width / 2, height /2]); */
-	// Define a geoPath
-
-
-
 	//use Promises to parallelize asynchronous data loading
 	var promises = [];
     promises.push(d3.csv("data/ROW_WORKFLOW.csv")); //loading the csv data file or the attributes file
@@ -79,7 +69,7 @@ function setMap(){
 		//This part of the script came here after the Join Data function was defined.
 		usStates = joinData(usStates, csvData);
 
-		//Create the color scale. This part of the script came here after the COlor Scale function was defined,
+		//Create the color scale. This part of the script came here after the Color Scale function was defined,
 		var colorScale = makeColorScale(csvData);
 
 		//Add enumeration units to the map. This part of the script came here after the enumeration function was defined.
@@ -123,8 +113,6 @@ function joinData(usStates, csvData){
 	return usStates;
 };
 //End function Joining CSV attributes to the USStates special datasest
-
-
 
 //Begine function to create color scale generator
 function makeColorScale(data){
